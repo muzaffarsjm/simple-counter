@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <style>
+      body{
+        margin: 0;
+      }
+      .styles-background{
+        background-color: rgb(191, 198, 191);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: rgb(219, 64, 64);
+      }
+      .styles-top-text{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: bold;
+        font-size: 70px;
+        letter-spacing: 2px;
+      }
+      .js-number-poster{
+        font-size: 130px;
+        font-weight: bold;
+
+      }
+      .js-adder-button, 
+      .js-save-button {
+        border: none;
+        height: 50px;
+        width: 100px;
+        margin-right: 25px;
+        color: rgb(56, 65, 57);
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+      .previous-count{
+        font-size: 45px;
+        color: rgb(245, 4, 4);
+        font-weight: bold;
+        margin-top: 25x;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="styles-background">
+      <div class="container">
+        <p class = 'styles-top-text'>COUNTER</p>
+
+        <p class = 'js-number-poster'>0</p>
+
+        <button class = 'js-adder-button'
+          onclick = 'adder()'
+        > INCREMENT
+        </button>
+
+        <button class="js-save-button" onclick="
+        save()">SAVE</button>
+
+        <p class="previous-count">Previous Count: 0</p>
+
+      </div>
+    </div>
+    <script>
+      let count  = 0;
+      let newCount = document.querySelector('.js-number-poster');
+      let previousCountTracker = document.querySelector('.previous-count');
+
+      function adder(){
+        count++;   
+        newCount.innerHTML = count;
+      };
+
+      function save(){
+        previousCountTracker.innerHTML = `Previous Count: ${count}`;
+        newCount.innerHTML = 0;
+        //sets the ciunt to zero again 
+        count = 0;
+      };
+    </script>
+  </body>
+</html>
